@@ -1,0 +1,14 @@
+disabled_rules:
+  - identifier_name
+  - function_body_length
+  - file_length
+  - type_body_length
+excluded:
+  - Carthage
+  - Pods
+
+force_cast: warning
+force_try: warning
+cyclomatic_complexity: 12
+line_length: 150
+shorthand_operator: warning

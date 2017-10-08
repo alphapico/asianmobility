@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Walkthrough View Controller-->
+        <scene sceneID="qHk-Rl-nyG">
+            <objects>
+                <viewController storyboardIdentifier="container" id="3UE-oO-MJs" customClass="BWWalkthroughViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zbz-GE-cFb"/>
+                        <viewControllerLayoutGuide type="bottom" id="nNI-19-8w6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4iQ-mD-gS6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLI-6Z-Rd0">
+                                <rect key="frame" x="253" y="28" width="94" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="a9u-zI-2EX"/>
+                                    <constraint firstAttribute="width" constant="94" id="mam-XJ-RTy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="CLOSE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="3UE-oO-MJs" eventType="touchUpInside" id="dOb-t2-C7t"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Zyz-nZ-6t9">
+                                <rect key="frame" x="155" y="588" width="64" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="kOC-ig-rFg"/>
+                                    <constraint firstAttribute="height" constant="37" id="wM6-4d-5mk"/>
+                                </constraints>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hLI-6Z-Rd0" firstAttribute="top" secondItem="Zbz-GE-cFb" secondAttribute="bottom" constant="8" id="J7w-nC-nYN"/>
+                            <constraint firstItem="Zyz-nZ-6t9" firstAttribute="centerX" secondItem="4iQ-mD-gS6" secondAttribute="centerX" id="QM6-2Z-gOs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hLI-6Z-Rd0" secondAttribute="trailing" constant="12" id="sw5-pB-AZK"/>
+                            <constraint firstItem="nNI-19-8w6" firstAttribute="top" secondItem="Zyz-nZ-6t9" secondAttribute="bottom" constant="42" id="yIc-mX-iAk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="hLI-6Z-Rd0" id="cZm-tL-es1"/>
+                        <outlet property="pageControl" destination="Zyz-nZ-6t9" id="srk-xL-Zk1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZY-Sz-JxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-295.19999999999999" y="210.94452773613196"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="6KS-YQ-DTD">
+            <objects>
+                <viewController storyboardIdentifier="first" id="uZj-Mt-RbA" customClass="BWWalkthroughPageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xBp-FJ-lRi"/>
+                        <viewControllerLayoutGuide type="bottom" id="KaL-OP-5lO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R2c-qs-5Cn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="First" translatesAutoresizingMaskIntoConstraints="NO" id="NYw-pd-31G">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="NYw-pd-31G" secondAttribute="trailing" id="Kh8-Le-gaM"/>
+                            <constraint firstItem="NYw-pd-31G" firstAttribute="leading" secondItem="R2c-qs-5Cn" secondAttribute="leading" id="Wg2-3G-HO1"/>
+                            <constraint firstItem="NYw-pd-31G" firstAttribute="top" secondItem="R2c-qs-5Cn" secondAttribute="top" id="ghl-SN-5rU"/>
+                            <constraint firstItem="KaL-OP-5lO" firstAttribute="top" secondItem="NYw-pd-31G" secondAttribute="bottom" id="ze5-M1-4A6"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speed">
+                            <point key="value" x="1" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speedVariance">
+                            <point key="value" x="0.5" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Curve"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CgH-NN-SKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="211"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="99G-iS-cik">
+            <objects>
+                <viewController storyboardIdentifier="second" id="Ebv-qy-OkN" customClass="BWWalkthroughPageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gxJ-KY-mS4"/>
+                        <viewControllerLayoutGuide type="bottom" id="dF6-mn-zKa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7E2-bj-3W3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Second" translatesAutoresizingMaskIntoConstraints="NO" id="fT0-ru-gvW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fT0-ru-gvW" firstAttribute="top" secondItem="7E2-bj-3W3" secondAttribute="top" id="2r1-Wo-bIr"/>
+                            <constraint firstAttribute="trailing" secondItem="fT0-ru-gvW" secondAttribute="trailing" id="F5L-6m-jHS"/>
+                            <constraint firstItem="dF6-mn-zKa" firstAttribute="top" secondItem="fT0-ru-gvW" secondAttribute="bottom" id="VIU-3B-sLl"/>
+                            <constraint firstItem="fT0-ru-gvW" firstAttribute="leading" secondItem="7E2-bj-3W3" secondAttribute="leading" id="r23-we-zxh"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Curve"/>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speed">
+                            <point key="value" x="1" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speedVariance">
+                            <point key="value" x="0.5" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5q-DV-7YA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037.5999999999999" y="205.54722638680661"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="pkq-2x-WoY">
+            <objects>
+                <viewController storyboardIdentifier="third" id="8uy-u7-x5N" customClass="BWWalkthroughPageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i00-4E-j7s"/>
+                        <viewControllerLayoutGuide type="bottom" id="AFd-3m-XNa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jiw-bW-QRJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Third" translatesAutoresizingMaskIntoConstraints="NO" id="h3K-rf-GWF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="h3K-rf-GWF" secondAttribute="trailing" id="32d-en-a0g"/>
+                            <constraint firstItem="h3K-rf-GWF" firstAttribute="leading" secondItem="jiw-bW-QRJ" secondAttribute="leading" id="4Kp-I2-7o9"/>
+                            <constraint firstItem="h3K-rf-GWF" firstAttribute="top" secondItem="jiw-bW-QRJ" secondAttribute="top" id="bH8-EY-i5b"/>
+                            <constraint firstItem="AFd-3m-XNa" firstAttribute="top" secondItem="h3K-rf-GWF" secondAttribute="bottom" id="gXf-GA-wVq"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speed">
+                            <point key="value" x="1" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speedVariance">
+                            <point key="value" x="0.5" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Curve"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nm2-hi-09l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1741.5999999999999" y="210.94452773613196"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="dSc-5s-bP2">
+            <objects>
+                <viewController storyboardIdentifier="fourth" id="Osn-iz-Ldg" customClass="BWWalkthroughPageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZBS-ZQ-lWX"/>
+                        <viewControllerLayoutGuide type="bottom" id="ky3-bR-E8r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wok-VA-ksZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fourth" translatesAutoresizingMaskIntoConstraints="NO" id="kH0-PD-APQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kH0-PD-APQ" secondAttribute="trailing" id="IxR-KA-Kux"/>
+                            <constraint firstItem="ky3-bR-E8r" firstAttribute="top" secondItem="kH0-PD-APQ" secondAttribute="bottom" id="Qsq-IP-0js"/>
+                            <constraint firstItem="kH0-PD-APQ" firstAttribute="leading" secondItem="Wok-VA-ksZ" secondAttribute="leading" id="ac9-Zd-4VD"/>
+                            <constraint firstItem="kH0-PD-APQ" firstAttribute="top" secondItem="Wok-VA-ksZ" secondAttribute="top" id="dEV-J6-dUD"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speed">
+                            <point key="value" x="1" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speedVariance">
+                            <point key="value" x="0.5" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Curve"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4nl-NC-ybY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2389.5999999999999" y="210.94452773613196"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="First" width="375" height="667"/>
+        <image name="Fourth" width="375" height="667"/>
+        <image name="Second" width="375" height="667"/>
+        <image name="Third" width="375" height="667"/>
+    </resources>
+</document>

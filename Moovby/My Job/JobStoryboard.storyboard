@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Uoo-AY-ip8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Job View Controller-->
+        <scene sceneID="zj7-sy-nC0">
+            <objects>
+                <viewController storyboardIdentifier="JobViewController" id="heO-ws-c32" customClass="JobViewController" customModule="Moovby" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G01-EC-QaC"/>
+                        <viewControllerLayoutGuide type="bottom" id="HMt-bv-fdS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n2I-Is-4Y7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bYs-Yu-sut">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="heO-ws-c32" id="NqC-9h-ryc"/>
+                                    <outlet property="delegate" destination="heO-ws-c32" id="Ze5-bi-nQL"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bYs-Yu-sut" firstAttribute="top" secondItem="n2I-Is-4Y7" secondAttribute="top" id="0XE-DR-PnZ"/>
+                            <constraint firstItem="bYs-Yu-sut" firstAttribute="leading" secondItem="n2I-Is-4Y7" secondAttribute="leading" id="6ri-SX-tib"/>
+                            <constraint firstItem="HMt-bv-fdS" firstAttribute="top" secondItem="bYs-Yu-sut" secondAttribute="bottom" id="caT-nl-vJq"/>
+                            <constraint firstAttribute="trailing" secondItem="bYs-Yu-sut" secondAttribute="trailing" id="mjg-NJ-53g"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6I0-Zd-ay6">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="cqQ-vT-ZU9">
+                            <color key="tintColor" red="0.0" green="0.58823529409999997" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancelButtonDidTapped:" destination="heO-ws-c32" id="A8P-Sw-ncc"/>
+                            </connections>
+                        </barButtonItem>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="9b9-CM-yPX">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Current"/>
+                                <segment title="Past"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedIndexChanged:" destination="heO-ws-c32" eventType="valueChanged" id="aHI-7L-oha"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="jobTableView" destination="bYs-Yu-sut" id="g9S-0v-W6W"/>
+                        <outlet property="segmentedControl" destination="9b9-CM-yPX" id="NGE-Nf-z56"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YFi-aH-ogl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4434.3999999999996" y="-781.25937031484261"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="83z-fu-KXm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uoo-AY-ip8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="11s-Yn-bg9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="heO-ws-c32" kind="relationship" relationship="rootViewController" id="Khb-rx-nTf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IPi-4u-2dD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3495.1999999999998" y="-781.25937031484261"/>
+        </scene>
+    </scenes>
+</document>

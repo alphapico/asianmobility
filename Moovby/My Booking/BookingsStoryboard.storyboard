@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PaK-i4-Zg3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Booking View Controller-->
+        <scene sceneID="QSk-FH-bJh">
+            <objects>
+                <viewController storyboardIdentifier="BookingViewController" id="SjY-ZP-1Rt" customClass="BookingViewController" customModule="Moovby" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="35r-Hz-ibM"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Pl-GA-nwm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TWP-ka-rSb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Re9-UQ-ZaN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SjY-ZP-1Rt" id="qTH-fx-h7a"/>
+                                    <outlet property="delegate" destination="SjY-ZP-1Rt" id="LOm-am-zUL"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Re9-UQ-ZaN" secondAttribute="trailing" id="7Qr-5V-aLR"/>
+                            <constraint firstItem="Re9-UQ-ZaN" firstAttribute="top" secondItem="TWP-ka-rSb" secondAttribute="top" id="X2e-Qx-vtt"/>
+                            <constraint firstItem="Re9-UQ-ZaN" firstAttribute="leading" secondItem="TWP-ka-rSb" secondAttribute="leading" id="XOY-Hg-LGH"/>
+                            <constraint firstItem="2Pl-GA-nwm" firstAttribute="top" secondItem="Re9-UQ-ZaN" secondAttribute="bottom" id="hhf-yq-uPq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="z7E-4C-zDH">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="tfO-eH-zSk">
+                            <color key="tintColor" red="0.0" green="0.58823529409999997" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="homeButtonDidTapped:" destination="SjY-ZP-1Rt" id="faM-FF-vTe"/>
+                            </connections>
+                        </barButtonItem>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="pQ1-ra-nx4">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Current"/>
+                                <segment title="Past"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedIndexChanged:" destination="SjY-ZP-1Rt" eventType="valueChanged" id="LCn-oI-J0B"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bookingTableView" destination="Re9-UQ-ZaN" id="0em-X7-n1c"/>
+                        <outlet property="segmentedControl" destination="pQ1-ra-nx4" id="Oz1-m3-ozv"/>
+                        <segue destination="EyK-5i-jjB" kind="unwind" identifier="unwindToViewController" unwindAction="unwindToHomeWithSegue:" id="c33-Ix-D3w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KpF-zW-eAQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EyK-5i-jjB" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3495.1999999999998" y="-781.25937031484261"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8eg-SM-jJs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PaK-i4-Zg3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aDR-vX-6r4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SjY-ZP-1Rt" kind="relationship" relationship="rootViewController" id="SXC-UU-OVl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6aR-Kf-fFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2556" y="-781.25937031484261"/>
+        </scene>
+    </scenes>
+</document>
